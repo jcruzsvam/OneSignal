@@ -1,2 +1,2 @@
 // Not part of bundle, just for local development
-import './src/entries/worker';
+importScripts('https://cdn.onesignal.com/sdks/OneSignalSDKWorker.js');
