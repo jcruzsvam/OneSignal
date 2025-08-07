@@ -16,4 +16,16 @@
   <script src="onesignal-config.js"></script>
 </body>
 </html>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "TU_APP_ID", // Reemplaza por tu App ID real
+      path: "/OneSignal/",
+      serviceWorkerPath: "/OneSignal/OneSignalSDKWorker.js",
+      serviceWorkerUpdaterPath: "/OneSignal/OneSignalSDKUpdaterWorker.js"
+    });
+  });
+</script>
+
 
