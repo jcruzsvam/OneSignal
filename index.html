@@ -3,43 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notificaciones Push - OneSignallllll</title>
+  <title>Notificaciones Push - OneSignal</title>
 
-  <!-- SDK de OneSignal -->
+  <!-- ✅ SDK de OneSignal (solo una vez) -->
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
 </head>
 <body>
-  <h1>Bienvenido a mi prueba de OneSignal</h1>
+  <h1>Bienvenido a mi prueba de OneSignalllll</h1>
   <p>Este sitio usa notificaciones push.</p>
 
-  <!-- Script personalizado -->
- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "TU-APP-ID",
-      serviceWorkerPath: "OneSignalSDKWorker.js",
-      serviceWorkerUpdaterPath: "OneSignalSDKUpdaterWorker.js",
-      notifyButton: {
-        enable: true,
-      },
+  <!-- ✅ Script personalizado -->
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "4e28e2bf-93dc-418e-9a5e-df9522cf894e", // ← pon tu App ID real aquí
+        serviceWorkerPath: "OneSignalSDKWorker.js",
+        serviceWorkerUpdaterPath: "OneSignalSDKUpdaterWorker.js",
+        notifyButton: {
+          enable: true,
+        },
+      });
+
+      // Obtener ID del usuario
+      OneSignal.getUserId().then(function (userId) {
+        console.log("User ID:", userId);
+      });
+
+      // Verificar si está suscrito
+      OneSignal.isPushNotificationsEnabled().then(function (isEnabled) {
+        console.log("Push notifications enabled?", isEnabled);
+      });
     });
-
-    // Obtener ID del usuario
-    OneSignal.getUserId().then(function(userId) {
-      console.log("User ID:", userId);
-    });
-
-    // Verificar si está suscrito
-    OneSignal.isPushNotificationsEnabled().then(function(isEnabled) {
-      console.log("Push notifications enabled?", isEnabled);
-    });
-  });
-</script>
-
-
-
-
-
-
+  </script>
+</body>
+</html>
